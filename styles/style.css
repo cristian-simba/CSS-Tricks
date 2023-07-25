@@ -1,0 +1,146 @@
+.escribiendo {
+height: 80vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.efecto-escritura {
+width: 22ch;
+animation: escribiendo 2s steps(22), efecto .5s step-end infinite alternate;
+white-space: nowrap;
+overflow: hidden;
+border-right: 3px solid;
+font-family: monospace;
+font-size: 2em;
+}
+
+@keyframes escribiendo {
+from {
+    width: 0;
+}
+}
+
+@keyframes efecto {
+50% {
+    border-color: transparent;
+}
+}
+
+.cursor-personalizado {
+display: flex;
+height: 80vh;
+align-items: center;
+justify-content: center;
+background: #f3f3f3;
+padding: 0 10px;
+}
+
+h1{
+font-family: monospace;
+}
+
+.tarjeta {
+width: 200px;
+height: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #D29A5A;
+margin-right: 10px;
+color: #fff;
+font-size: 1.4em;
+text-align: center;
+}
+
+.tarjeta-imagen-cursor {
+background-color: #D11A5A;
+cursor: pointer;
+}
+
+.tarjeta-emoji-cursor {
+background-color: #D29B22;
+cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='48' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>?</text></svg>"), auto;
+}
+
+.tooltip {
+position: relative;
+border-bottom: 1px dotted black;
+}
+
+.tooltip:before {
+content: attr(tooltip-data); 
+position: absolute;
+width: 250px;
+background-color: #efba93;
+color: #fff;
+text-align: center;
+padding: 15px;
+line-height: 1.1;
+border-radius: 5px;
+z-index: 1;
+opacity: 0;
+transition: opacity .5s;
+bottom: 125%;
+left: 50%;
+margin-left: -60px;
+font-size: 0.70em;
+visibility: hidden;
+}
+
+.tooltip:after {
+content: "";
+position: absolute;
+bottom: 75%;
+left: 50%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+opacity: 0;
+transition: opacity .5s;
+border-color: #000 transparent transparent transparent;
+visibility: hidden;
+}
+
+.tooltip:hover:before, 
+.tooltip:hover:after {
+opacity: 1;
+visibility: visible;
+}
+.barra-lateral-dinamica {
+    overflow: hidden;
+    position: relative;
+    height: 15em;
+    max-width: 15em;
+    margin: auto;
+}
+
+.contenido-sitio {
+    margin: auto;
+}
+ 
+nav {
+display: flex;
+flex-direction: column;
+position: absolute;
+right: 100%;
+padding: 1em;
+background-color: #f3f3f3;
+transform: translateX(1em);
+transition: 0.2s transform;
+}
+
+nav:hover,
+nav:focus-within {
+transform: translateX(100%);
+}
+
+a {
+white-space: pre;
+color: black;
+}
+.cont{
+font-size: 2em;
+font-family: monospace;
+text-align: center;
+}
